@@ -1,0 +1,28 @@
+package com.shop.controller;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shop.service.Shopservice;
+
+@Controller
+@RequestMapping("/first")
+public class shopController {
+
+	@Resource
+	private Shopservice shopservice;
+	
+	
+	@RequestMapping("/1")
+	private void shopping(HttpServletRequest req,HttpServletResponse res) {
+	
+		System.out.println("6666");
+		shopservice.getUserinfo(req, res);
+	
+	}
+	
+}

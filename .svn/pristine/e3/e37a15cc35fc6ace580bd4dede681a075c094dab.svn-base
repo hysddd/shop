@@ -1,0 +1,11 @@
+package com.shop.mapper;
+
+import java.util.ArrayList;
+
+import model.userinfo;
+
+public interface Shopmapper {
+
+	
+	public ArrayList<userinfo> CheckUserInfo();
+}

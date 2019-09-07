@@ -1,0 +1,33 @@
+package com.shop.controller;
+
+import java.util.ArrayList;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.shop.model.classinfo;
+import com.shop.service.Shopservice;
+//接口层
+@Controller
+@RequestMapping("/first")
+public class shopController {
+	
+	@Resource
+	private Shopservice shopservice;
+	
+	
+	@RequestMapping("/1")
+	@ResponseBody  //把返回的参数转为json格式
+	private ArrayList<classinfo> shopping(HttpServletRequest req,HttpServletResponse res) {  
+		ArrayList<classinfo> a = shopservice.getvalue(req,res);
+		
+		return a;
+	}
+	
+}
